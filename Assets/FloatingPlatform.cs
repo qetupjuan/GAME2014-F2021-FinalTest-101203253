@@ -11,38 +11,25 @@ using UnityEngine;
 
 public class FloatingPlatform : MonoBehaviour
 {
-    public AudioSource[] SFXplatform;
-    private bool standing = false;
-    void Start()
-    {
-        
-    }
-
-
-    void Expand()
-    {
-
-    }
-
-    void Shrink()
-    {
-        
-    }
+    [SerializeField]
+    private AudioSource SFXsource;
+    [SerializeField]
+    private List<AudioClip> SFX;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            standing = true;
-            SFXplatform[0].Play();
+            SFXsource.clip = SFX[0];
+            SFXsource.Play();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            standing = false;
-            SFXplatform[0].Play();
+            SFXsource.clip = SFX[1];
+            SFXsource.Play();
         }
     }
 }
