@@ -277,20 +277,20 @@ public class PlayerBehaviour : MonoBehaviour
             TakeDamage(10);
         }
 
-        if (other.gameObject.CompareTag("Moving Platform"))
-        {
-            other.gameObject.GetComponent<MovingPlatformController>().isActive = true;
-            transform.SetParent(other.gameObject.transform);
-        }
+        //if (other.gameObject.CompareTag("Moving Platform"))
+        //{
+        //    other.gameObject.GetComponent<MovingPlatformController>().isActive = true;
+        //    transform.SetParent(other.gameObject.transform);
+        //}
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Moving Platform"))
-        {
-            other.gameObject.GetComponent<MovingPlatformController>().isActive = false;
-            transform.SetParent(parent);
-        }
+        //if (other.gameObject.CompareTag("Moving Platform"))
+        //{
+        //    other.gameObject.GetComponent<MovingPlatformController>().isActive = false;
+        //    transform.SetParent(parent);
+        //}
     }
 
 
